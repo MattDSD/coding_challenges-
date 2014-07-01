@@ -1,0 +1,24 @@
+arr = [4, 6, 7, 13, 34, 23, 23, 24]
+bin_size = 5
+
+# 0 - 5 = #
+# 5 - 10 = ##
+# 10 - 15 = #
+# 15 - 20 =
+# 20 - 25 = ###
+# 25 - 30 =
+# 30 - 35 = #
+#method that takes an array and bin_size
+def histogram(arr, bin_size)
+  bin_num = (arr.max.to_f / bin_size).ceil
+
+
+  arr_of_bins = Array.new(bin_num, 0)
+  arr.each do |x|
+    arr_of_bins[x / bin_size] += 1
+  end
+  arr_of_bins
+end
+
+p histogram(arr, bin_size)
+
